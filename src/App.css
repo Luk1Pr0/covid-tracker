@@ -47,4 +47,9 @@ hr {
 
 .content__container {
 	display: flex;
+	justify-content: center;
+}
+
+.content__wrapper {
+	margin: 0.5rem;
 }
