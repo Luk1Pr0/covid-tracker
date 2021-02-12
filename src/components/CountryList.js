@@ -1,14 +1,26 @@
 import React from 'react';
 
+import Country from './Country';
+
 const CountryList = ({ countries }) => {
 
 	return (
-		<div style={{ background: 'whitesmoke', height: '80vh', color: 'black' }}>
+		<div style={container}>
 			{countries.map(country => (
-				<h3>{country.TotalDeaths}</h3>
+				<Country key={country.ID} data={country} />
 			))}
 		</div>
 	)
+}
+
+const container = {
+	height: 'auto',
+	color: 'white',
+	display: 'flex',
+	flexWrap: 'wrap',
+	justifyContent: 'center',
+	position: 'relative',
+	top: '5rem',
 }
 
 export default CountryList;

@@ -3,11 +3,13 @@ import './App.css';
 
 import CountryList from './components/CountryList';
 import Home from './components/Home';
+import Loader from './components/Loader';
 
 const App = () => {
 
 	const [countries, setCountries] = useState([]);
 	const [worldCases, setWorldCases] = useState([{}]);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		getData();
@@ -15,10 +17,12 @@ const App = () => {
 
 	const getData = async () => {
 		try {
+			setLoading(true);
 			const response = await fetch(`https://api.covid19api.com/summary`);
 			const data = await response.json();
 			setCountries(data.Countries);
 			setWorldCases(data.Global);
+			setLoading(false);
 		} catch (error) {
 			console.log('Error getting data', error);
 		}
@@ -30,8 +34,17 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<Home data={worldCases} />
-			<CountryList countries={countries} />
+			{
+				!loading ?
+					(
+						<div>
+							<Home data={worldCases} />
+							<CountryList countries={countries} />
+						</div>
+					) :
+					<Loader />
+			}
+
 		</div>
 	);
 }
