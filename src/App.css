@@ -11,3 +11,26 @@ body {
 	background: rgb(41, 39, 39);
 	color: whitesmoke;
 }
+
+input {
+	outline: none;
+	padding: 5px 10px;
+	margin: 10px;
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid red;
+	color: whitesmoke;
+}
+
+label {
+	font-size: 1.2rem;
+}
+
+input::placeholder {
+	color: whitesmoke;
+}
+
+input:focus {
+	border-top: 2px solid limegreen;
+	border-bottom: none;
+}

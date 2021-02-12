@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-import CountryList from './components/CountryList';
+import SearchForm from './components/SearchForm';
 import Home from './components/Home';
+import CountryList from './components/CountryList';
 import Loader from './components/Loader';
 
 const App = () => {
 
 	const [countries, setCountries] = useState([]);
 	const [worldCases, setWorldCases] = useState([{}]);
+	const [search, setSearch] = useState('');
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
@@ -28,6 +30,13 @@ const App = () => {
 		}
 	}
 
+	const searchCountries = (e) => {
+		setSearch(e.target.value);
+		console.log(search);
+		countries.filter(country => {
+		});
+	}
+
 	// const rawDate = data.Date.split('T');
 	// const formattedDate = rawDate[0].split('-').reverse().join('/');
 	// const formattedTime = rawDate[1].split('.')[0].split(':').slice(0, 2).join(':');
@@ -39,6 +48,7 @@ const App = () => {
 					(
 						<div>
 							<Home data={worldCases} />
+							<SearchForm search={searchCountries} />
 							<CountryList countries={countries} />
 						</div>
 					) :

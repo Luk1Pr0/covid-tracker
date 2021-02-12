@@ -16,9 +16,7 @@ const homeStyle = {
 	justifyContent: 'space-around',
 	background: 'rgb(10, 70, 79)',
 	padding: '1.5rem 0',
-	position: 'fixed',
 	width: '100%',
-	minHeight: '5rem',
 	zIndex: '10'
 }
 

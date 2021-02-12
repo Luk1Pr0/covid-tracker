@@ -20,11 +20,12 @@ const card = {
 	background: 'rgb(10, 70, 79)',
 	margin: '1rem',
 	padding: '2rem',
-	width: '25%',
+	minWidth: '25%',
 	minHeight: '15rem',
 	display: 'flex',
 	flexDirection: 'column',
-	justifyContent: 'space-around'
+	justifyContent: 'space-around',
+	borderRadius: '10px',
 }
 
 export default Country;

@@ -19,8 +19,6 @@ const container = {
 	display: 'flex',
 	flexWrap: 'wrap',
 	justifyContent: 'center',
-	position: 'relative',
-	top: '5rem',
 }
 
 export default CountryList;
