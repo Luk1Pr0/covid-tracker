@@ -1,23 +1,27 @@
-import { findByLabelText } from '@testing-library/react';
 import React from 'react';
 
-import GlobalItem from './GlobalItem';
+const Home = ({ data }) => {
 
-const Home = ({ global }) => {
+	console.log(data);
 
 	return (
-		<div style={globalStyle}>
-			{console.log('Global Item', global)}
-			<h2>Global Cases: {global.TotalConfirmed}</h2>
-			<h2>Global Deaths: {global.TotalDeaths}</h2>
-			<h2>Global Recoveries: {global.TotalRecovered}</h2>
+		<div style={homeStyle}>
+			<h3 title={`Last Updated: ${data.Date}`}><span style={label}>Total Cases: </span>{data.TotalConfirmed}</h3>
+			<h3 title={`Last Updated: ${data.Date}`}> <span style={label}>Total Deaths: </span>{data.TotalDeaths}</h3>
+			<h3 title={`Last Updated: ${data.Date}`}> <span style={label}>Total Recoveries: </span>{data.TotalRecovered}</h3>
 		</div>
 	);
 }
 
-const globalStyle = {
+const homeStyle = {
 	display: 'flex',
 	justifyContent: 'space-around',
+	background: 'rgb(70, 79, 79)',
+	padding: '1rem 0',
+}
+
+const label = {
+	color: 'gold'
 }
 
 export default Home;

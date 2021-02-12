@@ -4,7 +4,6 @@ const CountryList = ({ countries }) => {
 
 	return (
 		<div>
-			{console.log('Countries list', countries)}
 		</div>
 	)
 }
