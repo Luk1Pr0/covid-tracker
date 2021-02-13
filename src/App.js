@@ -32,9 +32,7 @@ const App = () => {
 
 	const searchCountries = (e) => {
 		setSearch(e.target.value);
-		console.log(search);
-		countries.filter(country => {
-		});
+		countries.filter(country => country.Country);
 	}
 
 	// const rawDate = data.Date.split('T');
@@ -49,12 +47,11 @@ const App = () => {
 						<div>
 							<Home data={worldCases} />
 							<SearchForm search={searchCountries} />
-							<CountryList countries={countries} />
+							<CountryList countries={countries} input={search} />
 						</div>
 					) :
 					<Loader />
 			}
-
 		</div>
 	);
 }
