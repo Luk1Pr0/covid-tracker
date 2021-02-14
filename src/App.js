@@ -32,7 +32,7 @@ const App = () => {
 
 	const searchCountries = (e) => {
 		setSearch(e.target.value);
-		countries.filter(country => country.Country);
+		// countries.filter(country => console.log(country.Country));
 	}
 
 	// const rawDate = data.Date.split('T');
