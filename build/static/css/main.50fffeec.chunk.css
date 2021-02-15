@@ -1,0 +1,2 @@
+*{box-sizing:border-box;margin:0;padding:0;text-align:center}body{width:100%;min-height:100vh;background:#292727}body,input{color:#f5f5f5}input{outline:none;padding:5px 10px;margin:10px;background:transparent;border:none;border-bottom:2px solid red}label{font-size:1.2rem}input::-webkit-input-placeholder{color:#f5f5f5}input:-ms-input-placeholder{color:#f5f5f5}input::placeholder{color:#f5f5f5}input:focus{border-top:2px solid #32cd32;border-bottom:none}
+/*# sourceMappingURL=main.50fffeec.chunk.css.map */

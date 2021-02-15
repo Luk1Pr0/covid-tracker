@@ -14,7 +14,7 @@ const Home = ({ data, date }) => {
 
 	return (
 		<div style={homeStyle}>
-			<h4><span style={label}>Last Updated: <br /></span>{formatDate()}</h4>
+			{/* <h4><span style={label}>Last Updated: <br /></span>{formatDate()}</h4> */}
 			<h3><span style={label}>Total Cases: </span>{data.TotalConfirmed}</h3>
 			<h3><span style={label}>Total Deaths: </span>{data.TotalDeaths}</h3>
 			<h3><span style={label}>Total Recoveries: </span>{data.TotalRecovered}</h3>
