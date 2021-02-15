@@ -10,6 +10,7 @@ const App = () => {
 
 	const [countries, setCountries] = useState([]);
 	const [worldCases, setWorldCases] = useState([{}]);
+	const [date, setDate] = useState('');
 	const [search, setSearch] = useState('');
 	const [loading, setLoading] = useState(false);
 
@@ -24,6 +25,7 @@ const App = () => {
 			const data = await response.json();
 			setCountries(data.Countries);
 			setWorldCases(data.Global);
+			setDate(data.Global.Date.split('T'))
 			setLoading(false);
 		} catch (error) {
 			console.log('Error getting data', error);
@@ -34,17 +36,13 @@ const App = () => {
 		setSearch(e.target.value);
 	}
 
-	// const rawDate = data.Date.split('T');
-	// const formattedDate = rawDate[0].split('-').reverse().join('/');
-	// const formattedTime = rawDate[1].split('.')[0].split(':').slice(0, 2).join(':');
-
 	return (
 		<div className="App">
 			{
 				!loading ?
 					(
 						<div>
-							<Home data={worldCases} />
+							<Home data={worldCases} date={date} />
 							<SearchForm search={searchCountries} />
 							<CountryList countries={countries} input={search} />
 						</div>
