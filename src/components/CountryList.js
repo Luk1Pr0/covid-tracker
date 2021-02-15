@@ -4,13 +4,17 @@ import Country from './Country';
 
 const CountryList = ({ countries, input }) => {
 
+	const country = countries.map((country) => {
+		if (country.Country.toLowerCase().includes(input.toLowerCase())) {
+			return <Country key={country.ID} data={country} />
+		} else {
+			countries.map(country => <Country key={country.ID} data={country} />);
+		}
+	});
+
 	return (
 		<div style={container}>
-			{
-				countries.map(country => (
-					<Country key={country.ID} data={country} />
-				))
-			}
+			{country}
 		</div>
 	)
 }
